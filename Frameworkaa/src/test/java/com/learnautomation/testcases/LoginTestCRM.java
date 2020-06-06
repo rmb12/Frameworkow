@@ -1,5 +1,7 @@
 package com.learnautomation.testcases;
 
+import static org.testng.Assert.assertEquals;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
@@ -21,6 +23,9 @@ public class LoginTestCRM extends BaseClass {
 		LoginPage loginPage=PageFactory.initElements(driver, LoginPage.class);
 		logger.info("starting Application");
 		loginPage.loginToCRM(excel.getStringData("Login", 0, 0), excel.getStringData("Login", 0, 1));
+		
+		String s=driver.getTitle();
+		assertEquals(excel.getStringData("Login", 0, 2), s);
 		logger.pass("Login sucess");
 		//BrowserFactory.quitBrowser(driver);
 	}

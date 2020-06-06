@@ -71,7 +71,6 @@ public void tearDown()
 		}
 		
 		report.flush();
-		Reporter.log("tests completed>>>reports generated"
-				+ "36", true);
+		Reporter.log("tests completed>>>reports generated"+ "36", true);
 	}	
 }
